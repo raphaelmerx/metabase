@@ -399,6 +399,27 @@ describe("meta/Dashboard", () => {
             dimensions: {},
             fieldValues: () => [],
           },
+          [[
+            "field",
+            "boolean",
+            {
+              "base-type": "type/Boolean",
+            },
+          ]]: {
+            name: "boolean",
+            display_name: "boolean",
+            base_type: "type/Boolean",
+            effective_type: "type/Boolean",
+            semantic_type: null,
+            field_ref: [
+              "field",
+              "boolean",
+              {
+                "base-type": "type/Boolean",
+              },
+            ],
+            fieldValues: () => [],
+          },
         },
         field(id) {
           return this.fields[id];
@@ -454,21 +475,6 @@ describe("meta/Dashboard", () => {
               card_id: 62,
               dashcard_id: 87,
               field: expect.objectContaining({
-                _plainObject: {
-                  base_type: "type/Boolean",
-                  display_name: "boolean",
-                  effective_type: "type/Boolean",
-                  field_ref: [
-                    "field",
-                    "boolean",
-                    { "base-type": "type/Boolean" },
-                  ],
-                  fingerprint: {
-                    global: { "distinct-count": 3, "nil%": 0.25 },
-                  },
-                  name: "boolean",
-                  semantic_type: null,
-                },
                 base_type: "type/Boolean",
                 display_name: "boolean",
                 effective_type: "type/Boolean",
@@ -480,7 +486,7 @@ describe("meta/Dashboard", () => {
                 name: "boolean",
                 semantic_type: null,
               }),
-              field_id: "boolean",
+              field_id: ["field", "boolean", { "base-type": "type/Boolean" }],
               mappingsWithValues: 0,
               parameter_id: "parameter1",
               target: [
